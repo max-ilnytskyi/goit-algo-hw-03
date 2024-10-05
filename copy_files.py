@@ -2,6 +2,7 @@ import os
 import shutil
 import sys
 
+
 def copy_files(src, dest):
     try:
         if not os.path.exists(src):
@@ -38,10 +39,12 @@ def copy_files(src, dest):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python script_name.py <source_directory_path> [<destination_directory_path>]")
+        print(
+            "Usage: python script_name.py <source_directory_path> [<destination_directory_path>]"
+        )
         sys.exit(1)
 
     src = sys.argv[1]
-    dest = sys.argv[2] if len(sys.argv) > 2 else 'dist'
+    dest = sys.argv[2] if len(sys.argv) > 2 else "dist"
 
     copy_files(src, dest)
